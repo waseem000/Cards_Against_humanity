@@ -212,7 +212,7 @@ public class client implements Runnable {
 			if (line.startsWith("SUBMITNAME")) {
               // out.println(getName());
 			//	System.out.println("in line == SUBMITNAME"+line);
-				sendMsg(initilaize.p.getName());
+				//sendMsg(initilaize.p.getName());
 			//	System.out.println("in line == SUBMITNAME"+name);
 			//	Game_GUI.setChat(line);
             } else if (line.startsWith("NAMEACCEPTED")) {
@@ -237,11 +237,16 @@ public class client implements Runnable {
             	//Game_GUI.setChat("this is a text2");
             	//Game_GUI.setChat("this is a text3");
             }
-            else
+            else if(line.startsWith("white"))
             {
-            
-            	
-            	initilaize.assignPlayerCards(initilaize.p,line);
+
+            	initilaize.assignPlayerCards(initilaize.p,line.substring(5));
+            }
+            else if(line.startsWith("black"))
+            {
+
+            	//initilaize.screen.set_Black_Card(line.substring(8));
+            	initilaize.setBlack_card(line.substring(5));
             }
         }
     }

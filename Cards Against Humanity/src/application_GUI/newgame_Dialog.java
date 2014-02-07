@@ -93,6 +93,7 @@ public class newgame_Dialog extends Dialog {
 				{
 					initilaize.c.setServerAddress(server_address.getText());
 					initilaize.p.setName(player_name.getText());
+					initilaize.c.sendMsg(player_name.getText());
 					//initilaize.c.getOut().print(player_name.getText());
 				//	initilaize.setOpen_Server(btnRunTheServer.getSelection());
 					shell.dispose();

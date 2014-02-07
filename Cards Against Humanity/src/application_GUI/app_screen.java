@@ -98,7 +98,7 @@ public class app_screen {
 	
 		button_Array(initilaize.getNumber_of_cards_player());
 		assign_Cards_Buttons();
-		set_Black_Crad();
+		set_Black_Card();
 
 		//client_obj.start();
 		while (!shlCradsAginstHumanity.isDisposed()) {
@@ -222,7 +222,7 @@ public class app_screen {
 		btnHidden.setBounds(10, 490, 75, 25);
 		btnHidden.setVisible(false);
 		
-		btnblack_card = new Button(shlCradsAginstHumanity, SWT.NONE);
+		btnblack_card = new Button(shlCradsAginstHumanity, SWT.WRAP);
 		btnblack_card.setEnabled(false);
 		btnblack_card.setBounds(10, 10, 167, 172);
 		create_Button(initilaize.getNumber_of_cards_player());
@@ -358,13 +358,13 @@ public class app_screen {
 		}
 	}
 	
-	private void set_Black_Crad()
+	public void set_Black_Card()
 	{
 		/*Integer cards_arr_size=initilaize.getBlack_cards().size();
 		Integer loc;
 		Random r_loc = new Random();
-		loc= r_loc.nextInt(cards_arr_size)+1;
-		btnblack_card.setText(initilaize.getBlack_cards().get(loc));*/
-		
+		loc= r_loc.nextInt(cards_arr_size)+1;*/
+		//btnblack_card.setText(initilaize.getBlack_cards().get(loc));
+		btnblack_card.setText(initilaize.getBlack_card());
 	}
 }

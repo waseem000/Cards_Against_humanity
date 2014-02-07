@@ -20,6 +20,7 @@ public class initilaize {
 	private static ArrayList<String> white_cards;
 	private static ArrayList<String> black_cards;
 	private static boolean open_Server=false;
+	private static String black_card;
 	/**
 	 * @return the black_cards
 	 */
@@ -56,7 +57,7 @@ public class initilaize {
 	
 		//c.sendMsg("GetCards");
 		getPlayerCards();
-		
+		getBlackCard();
 
 	}
 
@@ -143,9 +144,9 @@ public class initilaize {
 			num_of_cards=arr.size();
 		}
 		Game_server.setWhite_cards(arr);*/
-		for(int i=p.getNumber_of_crads(); i<=number_of_cards_player;i++)
+		for(int i=p.getNumber_of_crads(); i<number_of_cards_player;i++)
 		{
-			c.sendMsg("GetCards");
+			c.sendMsg("Get_White_Cards");
 			Thread.sleep(1000);
 		}
 		
@@ -155,6 +156,26 @@ public class initilaize {
 	{
 		p.addCard(s);
 	}
+	
+	public static void getBlackCard() throws InterruptedException
+	{
+		c.sendMsg("Get_Black_Cards");
+		Thread.sleep(1000);
+	}
+		/**
+	 * @return the black_card
+	 */
+	public static String getBlack_card() {
+		return black_card;
+	}
+
+	/**
+	 * @param black_card the black_card to set
+	 */
+	public static void setBlack_card(String card) {
+		black_card = card;
+	}
+
 		/**
 	 * @param args
 	 * @throws IOException 

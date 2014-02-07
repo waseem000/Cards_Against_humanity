@@ -93,7 +93,7 @@ public class Game_Handler {
 	    }
 	}
 	
-	public static String get_Card()
+	public static String get_White_Card()
 	{
 		String card;
 		Integer num_of_cards=white_cards.size();
@@ -104,6 +104,24 @@ public class Game_Handler {
 			card=white_cards.get(card_location);
 			System.out.println(white_cards.get(card_location));
 			white_cards.remove(white_cards.get(card_location));
+		
+			return card;
+
+		
+	}
+	
+	public static String get_Black_Card()
+	{
+		
+		String card;
+		Integer num_of_cards=black_cards.size();
+		Random R = new Random();
+		Integer card_location;
+		
+			card_location= R.nextInt(num_of_cards);
+			card=black_cards.get(card_location);
+			System.out.println(black_cards.get(card_location));
+			black_cards.remove(black_cards.get(card_location));
 		
 			return card;
 

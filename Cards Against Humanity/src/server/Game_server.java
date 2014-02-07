@@ -180,12 +180,18 @@ public class Game_server  {
                     if (input == null) {
                         return;
                     }
-                    else if (input.equals("GetCards"))
-                    		{
+                    else if (input.equals("Get_White_Cards"))
+                    {
                     	
-                    	String cards;
-                    	cards=Game_Handler.get_Card();
-                    	out.println(cards);
+                    	String wcards;
+                    	wcards=Game_Handler.get_White_Card();
+                    	out.println("white"+wcards);
+                    }
+                    else if(input.equals("Get_Black_Cards"))
+                    {
+                    	String bcards;
+                    	bcards=Game_Handler.get_Black_Card();
+                    	out.println("black"+bcards);
                     }
                     else
                     {
